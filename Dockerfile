@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # set the working directory in the container
-WORKDIR /psm/
+WORKDIR /Pyrogram-SessionMaker-Bot/
 
 RUN apt -qq update && apt -qq upgrade -y
 RUN apt -qq install -y --no-install-recommends \
@@ -14,7 +14,7 @@ RUN apt -qq install -y --no-install-recommends \
 COPY requirements.txt .
 
 # install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # copy the content of the local src directory to the working directory
 COPY . .
